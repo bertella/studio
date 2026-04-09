@@ -19,13 +19,11 @@ export function Hero() {
             Impulsando el Negocio Local
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold leading-[1.1] mb-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            Transformación Digital para <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent/80 to-primary">Pequeñas Empresas</span>
+            Soluciones Digitales para <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent/80 to-primary">PyMEs que quieren crecer</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000">
-            Cerramos la brecha entre los procesos manuales y la eficiencia digital. 
-            Especialistas en soluciones personalizadas de AppSheet y arquitecturas 
-            robustas de bases de datos SQL adaptadas a las necesidades de tu negocio.
+            Ayudo a comercios y pequeñas empresas a dejar el desorden de los Excel mediante aplicaciones personalizadas y automatización. Menos caos, más ventas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-16 duration-1000">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 text-base font-semibold group">
