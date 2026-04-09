@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -39,7 +38,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Email</h4>
-                    <p className="text-muted-foreground">hola@digitalbridge.tech</p>
+                    <p className="text-muted-foreground">hola@doctadata.tech</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

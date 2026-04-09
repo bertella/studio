@@ -1,4 +1,3 @@
-
 import { Terminal } from "lucide-react";
 import Link from "next/link";
 
@@ -12,7 +11,7 @@ export function Footer() {
               <Terminal className="w-4 h-4 text-white" />
             </div>
             <span className="font-headline font-bold text-lg tracking-tight">
-              DigitalBridge<span className="text-accent">.</span>
+              DoctaData<span className="text-accent">.</span>
             </span>
           </div>
 
@@ -24,7 +23,7 @@ export function Footer() {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} DigitalBridge Consulting. Córdoba, Argentina.
+            &copy; {new Date().getFullYear()} DoctaData. Córdoba, Argentina.
           </p>
         </div>
       </div>

@@ -1,10 +1,9 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'DigitalBridge Consulting | Soluciones de Software y Experto en Low-Code',
+  title: 'DoctaData | Soluciones de Software y Experto en Low-Code',
   description: 'Transformación digital para pequeñas empresas mediante AppSheet y optimización de bases de datos SQL.',
 };
 

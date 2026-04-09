@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -14,7 +13,7 @@ export function Navbar() {
             <Terminal className="w-5 h-5 text-white" />
           </div>
           <span className="font-headline font-bold text-xl tracking-tight">
-            DigitalBridge<span className="text-accent">.</span>
+            DoctaData<span className="text-accent">.</span>
           </span>
         </Link>
 
