@@ -19,12 +19,13 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-          <Link href="#services" className="hover:text-accent transition-colors">Services</Link>
-          <Link href="#portfolio" className="hover:text-accent transition-colors">Portfolio</Link>
-          <Link href="#skills" className="hover:text-accent transition-colors">Expertise</Link>
-          <Link href="#ai-tool" className="hover:text-accent transition-colors">Drafting Tool</Link>
+          <Link href="#sobre-mi" className="hover:text-accent transition-colors">Sobre mí</Link>
+          <Link href="#servicios" className="hover:text-accent transition-colors">Servicios</Link>
+          <Link href="#portfolio" className="hover:text-accent transition-colors">Portafolio</Link>
+          <Link href="#skills" className="hover:text-accent transition-colors">Experiencia</Link>
+          <Link href="#ai-tool" className="hover:text-accent transition-colors">Redactor AI</Link>
           <Button asChild variant="outline" className="border-accent/20 hover:border-accent hover:bg-accent/5">
-            <Link href="#contact">Contact Me</Link>
+            <Link href="#contact">Contacto</Link>
           </Button>
         </div>
       </div>

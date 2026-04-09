@@ -4,8 +4,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'DigitalBridge Consulting | Software Solutions & Low-Code Expert',
-  description: 'Digital transformation for small businesses through AppSheet and SQL database optimization.',
+  title: 'DigitalBridge Consulting | Soluciones de Software y Experto en Low-Code',
+  description: 'Transformación digital para pequeñas empresas mediante AppSheet y optimización de bases de datos SQL.',
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="es" className="dark scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

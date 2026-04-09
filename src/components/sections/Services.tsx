@@ -6,33 +6,33 @@ import { Box, Calculator, Database, CheckCircle2 } from "lucide-react";
 
 const services = [
   {
-    title: "Inventory Systems",
-    description: "Real-time tracking solutions that eliminate stockouts and overstocking issues for hardware stores and retailers.",
+    title: "Sistemas de Inventario",
+    description: "Soluciones de seguimiento en tiempo real que eliminan los problemas de falta o exceso de stock para comercios y minoristas.",
     icon: Box,
-    features: ["Barcode scanning", "Cloud synchronization", "Automated reordering"]
+    features: ["Escaneo de códigos de barras", "Sincronización en la nube", "Reordenamiento automático"]
   },
   {
-    title: "Automated Budgeting",
-    description: "Digital accounting tools that replace messy spreadsheets with automated reporting and clear financial insights.",
+    title: "Presupuestos Automatizados",
+    description: "Herramientas de contabilidad digital que reemplazan planillas desordenadas con informes automáticos y claridad financiera.",
     icon: Calculator,
-    features: ["Expense tracking", "Forecasting", "Custom reporting"]
+    features: ["Seguimiento de gastos", "Proyecciones", "Informes personalizados"]
   },
   {
-    title: "SQL Optimization",
-    description: "Deep-dive database tuning to ensure your business data remains fast, reliable, and perfectly organized.",
+    title: "Optimización SQL",
+    description: "Ajuste profundo de bases de datos para asegurar que la información de tu negocio sea rápida, confiable y organizada.",
     icon: Database,
-    features: ["Query performance", "Schema design", "Data migration"]
+    features: ["Rendimiento de consultas", "Diseño de esquemas", "Migración de datos"]
   }
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-secondary/30">
+    <section id="servicios" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Specialized Services</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Servicios Especializados</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Focused expertise in the tools that matter most for modern digital operations.
+            Enfoque en las herramientas que más importan para las operaciones digitales modernas.
           </p>
         </div>
         

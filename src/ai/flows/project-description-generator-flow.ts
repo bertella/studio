@@ -1,10 +1,11 @@
+
 'use server';
 /**
- * @fileOverview An AI tool to assist the consultant in drafting compelling and tailored project descriptions.
+ * @fileOverview Una herramienta de IA para ayudar al consultor a redactar descripciones de proyectos convincentes y personalizadas en español.
  *
- * - generateProjectDescription - A function that handles the generation of project descriptions.
- * - GenerateProjectDescriptionInput - The input type for the generateProjectDescription function.
- * - GenerateProjectDescriptionOutput - The return type for the generateProjectDescription function.
+ * - generateProjectDescription - Función que maneja la generación de descripciones de proyectos.
+ * - GenerateProjectDescriptionInput - Tipo de entrada para la función.
+ * - GenerateProjectDescriptionOutput - Tipo de salida para la función.
  */
 
 import {ai} from '@/ai/genkit';
@@ -14,12 +15,12 @@ const GenerateProjectDescriptionInputSchema = z.object({
   projectType: z
     .string()
     .describe(
-      'The type of project, e.g., "Inventory System", "Automated Budgeting", "SQL Optimization".'
+      'El tipo de proyecto, ej., "Sistema de Inventario", "Presupuestos Automatizados", "Optimización SQL".'
     ),
   projectOutcomes: z
     .string()
     .describe(
-      'Key outcomes or benefits achieved, e.g., "Reduced manual data entry by 50%", "Improved reporting speed by 30%", "Saved client X hours per week".'
+      'Resultados clave o beneficios logrados, ej., "Reducción de entrada manual en un 50%", "Ahorro de X horas por semana".'
     ),
 });
 export type GenerateProjectDescriptionInput = z.infer<
@@ -29,7 +30,7 @@ export type GenerateProjectDescriptionInput = z.infer<
 const GenerateProjectDescriptionOutputSchema = z.object({
   description: z
     .string()
-    .describe('A compelling and tailored project description.'),
+    .describe('Una descripción convincente y personalizada del proyecto en español.'),
 });
 export type GenerateProjectDescriptionOutput = z.infer<
   typeof GenerateProjectDescriptionOutputSchema
@@ -45,15 +46,15 @@ const prompt = ai.definePrompt({
   name: 'generateProjectDescriptionPrompt',
   input: {schema: GenerateProjectDescriptionInputSchema},
   output: {schema: GenerateProjectDescriptionOutputSchema},
-  prompt: `You are an expert marketing copywriter specializing in creating compelling project descriptions for a software consultant's portfolio.
-Your goal is to generate a project description that highlights the value delivered to clients, focusing on their business needs and the positive impact of the solutions provided.
+  prompt: `Eres un redactor experto en marketing especializado en crear descripciones de proyectos convincentes para el portafolio de un consultor de software.
+Tu objetivo es generar una descripción de proyecto que resalte el valor entregado a los clientes, enfocándote en sus necesidades comerciales y el impacto positivo de las soluciones proporcionadas.
 
-Craft a concise, professional, and engaging description (around 100-150 words) for a portfolio entry based on the following information:
+Escribe una descripción concisa, profesional y atractiva (alrededor de 100-150 palabras) en ESPAÑOL basada en la siguiente información:
 
-Project Type: {{{projectType}}}
-Project Outcomes: {{{projectOutcomes}}}
+Tipo de Proyecto: {{{projectType}}}
+Resultados del Proyecto: {{{projectOutcomes}}}
 
-The description should appeal to potential clients looking for similar digital transformation solutions.
+La descripción debe atraer a clientes potenciales que busquen soluciones de transformación digital similares. Asegúrate de que el tono sea profesional y persuasivo.
 `,
 });
 
@@ -66,7 +67,7 @@ const generateProjectDescriptionFlow = ai.defineFlow(
   async input => {
     const {output} = await prompt(input);
     if (!output) {
-      throw new Error('Failed to generate project description.');
+      throw new Error('Error al generar la descripción del proyecto.');
     }
     return output;
   }

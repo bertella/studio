@@ -14,8 +14,8 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+      title: "¡Mensaje Enviado!",
+      description: "Gracias por contactarme. Te responderé en menos de 24 horas.",
     });
   };
 
@@ -26,9 +26,9 @@ export function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">Let's build something <span className="text-accent">together</span>.</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">Construyamos algo <span className="text-accent">juntos</span>.</h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Ready to transform your business workflows? Whether you need a simple inventory app or a complete database restructuring, I'm here to help.
+                  ¿Listo para transformar tus flujos de trabajo? Ya sea que necesites una app de inventario o una reestructuración de base de datos, estoy para ayudarte.
                 </p>
               </div>
 
@@ -39,7 +39,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Email</h4>
-                    <p className="text-muted-foreground">hello@digitalbridge.tech</p>
+                    <p className="text-muted-foreground">hola@digitalbridge.tech</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -47,8 +47,8 @@ export function Contact() {
                     <MessageSquare className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg">Quick Consultation</h4>
-                    <p className="text-muted-foreground">Available for 15-min discovery calls</p>
+                    <h4 className="font-bold text-lg">Consulta Rápida</h4>
+                    <p className="text-muted-foreground">Disponible para llamadas de descubrimiento de 15 min</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -56,8 +56,8 @@ export function Contact() {
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg">Location</h4>
-                    <p className="text-muted-foreground">Remote-First | US & EU Timezones</p>
+                    <h4 className="font-bold text-lg">Ubicación</h4>
+                    <p className="text-muted-foreground">Córdoba, Argentina | Remoto Internacional</p>
                   </div>
                 </div>
               </div>
@@ -67,28 +67,28 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="first-name">First Name</Label>
-                    <Input id="first-name" placeholder="John" className="bg-background/50" required />
+                    <Label htmlFor="first-name">Nombre</Label>
+                    <Input id="first-name" placeholder="Juan" className="bg-background/50" required />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="last-name">Last Name</Label>
-                    <Input id="last-name" placeholder="Doe" className="bg-background/50" required />
+                    <Label htmlFor="last-name">Apellido</Label>
+                    <Input id="last-name" placeholder="Pérez" className="bg-background/50" required />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Work Email</Label>
-                  <Input id="email" type="email" placeholder="john@company.com" className="bg-background/50" required />
+                  <Label htmlFor="email">Email de trabajo</Label>
+                  <Input id="email" type="email" placeholder="juan@empresa.com" className="bg-background/50" required />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Project Inquiry" className="bg-background/50" required />
+                  <Label htmlFor="subject">Asunto</Label>
+                  <Input id="subject" placeholder="Consulta sobre Proyecto" className="bg-background/50" required />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">How can I help you?</Label>
-                  <Textarea id="message" placeholder="Tell me about your project needs..." className="min-h-[150px] bg-background/50" required />
+                  <Label htmlFor="message">¿En qué puedo ayudarte?</Label>
+                  <Textarea id="message" placeholder="Cuéntame sobre las necesidades de tu proyecto..." className="min-h-[150px] bg-background/50" required />
                 </div>
                 <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 text-base font-bold">
-                  Send Message
+                  Enviar Mensaje
                   <Send className="w-4 h-4 ml-2" />
                 </Button>
               </form>

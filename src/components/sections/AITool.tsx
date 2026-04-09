@@ -23,8 +23,8 @@ export function AITool() {
     e.preventDefault();
     if (!projectType || !outcomes) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in both the project type and outcomes.",
+        title: "Falta información",
+        description: "Por favor completa el tipo de proyecto y los resultados.",
         variant: "destructive"
       });
       return;
@@ -36,8 +36,8 @@ export function AITool() {
       setResult(response.description);
     } catch (error) {
       toast({
-        title: "Generation Failed",
-        description: "There was an error generating your description. Please try again.",
+        title: "Error de generación",
+        description: "Hubo un error al generar la descripción. Inténtalo de nuevo.",
         variant: "destructive"
       });
     } finally {
@@ -57,8 +57,8 @@ export function AITool() {
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Consultant Toolkit</h2>
-            <p className="text-muted-foreground">Internal AI-powered tool to draft compelling case studies for your portfolio.</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Herramientas de Consultoría</h2>
+            <p className="text-muted-foreground">Herramienta interna potenciada por IA para redactar casos de éxito profesionales para tu portafolio.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -66,27 +66,27 @@ export function AITool() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-accent" />
-                  Project Draftsman
+                  Redactor de Proyectos
                 </CardTitle>
-                <CardDescription>Enter basic project details to generate professional copy.</CardDescription>
+                <CardDescription>Ingresa detalles básicos para generar un texto profesional.</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleGenerate} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="type">Project Type</Label>
+                    <Label htmlFor="type">Tipo de Proyecto</Label>
                     <Input 
                       id="type" 
-                      placeholder="e.g. Hardware Store Inventory App" 
+                      placeholder="ej. App de Inventario para Ferretería" 
                       className="bg-background/50 border-white/10 focus:border-accent"
                       value={projectType}
                       onChange={(e) => setProjectType(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="outcomes">Key Outcomes</Label>
+                    <Label htmlFor="outcomes">Resultados Clave</Label>
                     <Textarea 
                       id="outcomes" 
-                      placeholder="e.g. Reduced stock errors by 40%, integrated vendor APIs, saved 10hrs/week"
+                      placeholder="ej. Reducción de errores en 40%, integración con APIs, ahorro de 10hs/semana"
                       className="min-h-[120px] bg-background/50 border-white/10 focus:border-accent"
                       value={outcomes}
                       onChange={(e) => setOutcomes(e.target.value)}
@@ -96,10 +96,10 @@ export function AITool() {
                     {isLoading ? (
                       <>
                         <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                        Generating...
+                        Generando...
                       </>
                     ) : (
-                      "Generate Description"
+                      "Generar Descripción"
                     )}
                   </Button>
                 </form>
@@ -109,11 +109,11 @@ export function AITool() {
             <Card className="glass-effect border-accent/10 min-h-[400px] flex flex-col">
               <CardHeader>
                 <div className="flex justify-between items-center">
-                  <CardTitle className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Output Preview</CardTitle>
+                  <CardTitle className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Vista Previa</CardTitle>
                   {result && (
                     <Button variant="ghost" size="sm" onClick={copyToClipboard} className="hover:bg-accent/10 hover:text-accent">
                       {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
-                      {copied ? "Copied" : "Copy Text"}
+                      {copied ? "Copiado" : "Copiar Texto"}
                     </Button>
                   )}
                 </div>
@@ -126,7 +126,7 @@ export function AITool() {
                 ) : (
                   <div className="space-y-4 opacity-40">
                     <Sparkles className="w-12 h-12 mx-auto" />
-                    <p>Your generated content will appear here.</p>
+                    <p>El contenido generado aparecerá aquí.</p>
                   </div>
                 )}
               </CardContent>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -7,25 +8,25 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const projects = [
   {
-    title: "Hardware Store Inventory App",
+    title: "App de Inventario para Ferretería",
     category: "AppSheet / Low-Code",
-    description: "A comprehensive mobile solution for a local hardware store, featuring real-time stock counts, vendor integrations, and multi-location support.",
+    description: "Una solución móvil completa para una ferretería local, con conteo de stock en tiempo real e integraciones con proveedores.",
     image: PlaceHolderImages.find(img => img.id === 'inventory-app')?.imageUrl,
-    tags: ["Barcode", "Cloud Sync", "Mobile-First"]
+    tags: ["Código de Barras", "Nube", "Mobile"]
   },
   {
-    title: "SMB Financial Dashboard",
+    title: "Tablero Financiero para PyMEs",
     category: "SQL / Business Intelligence",
-    description: "Centralized budgeting tool for a construction firm that automated their monthly reconciliation process.",
+    description: "Herramienta de presupuestos centralizada para una constructora que automatizó su proceso de conciliación mensual.",
     image: PlaceHolderImages.find(img => img.id === 'budgeting-tool')?.imageUrl,
-    tags: ["PostgreSQL", "Automation", "Fintech"]
+    tags: ["PostgreSQL", "Automatización", "Finanzas"]
   },
   {
-    title: "Data Pipeline Optimization",
-    category: "SQL Optimization",
-    description: "Restructured legacy database for an e-commerce platform, reducing query times from 5s to under 100ms.",
+    title: "Optimización de Pipelines de Datos",
+    category: "Optimización SQL",
+    description: "Reestructuración de base de datos para un e-commerce, reduciendo tiempos de consulta de 5s a menos de 100ms.",
     image: PlaceHolderImages.find(img => img.id === 'sql-optimization')?.imageUrl,
-    tags: ["Indexing", "Query Tuning", "NoSQL Migration"]
+    tags: ["Indexación", "Tuning", "Migración"]
   }
 ];
 
@@ -35,13 +36,13 @@ export function Portfolio() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Portfolio</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Portafolio</h2>
             <p className="text-muted-foreground">
-              A selection of digital transformation projects delivered to clients across various industries.
+              Una selección de proyectos de transformación digital entregados a clientes en diversas industrias.
             </p>
           </div>
           <div className="flex gap-2">
-             <Badge variant="outline" className="border-accent/20 bg-accent/5 py-1.5 px-4 text-accent">All Projects</Badge>
+             <Badge variant="outline" className="border-accent/20 bg-accent/5 py-1.5 px-4 text-accent">Todos los Proyectos</Badge>
           </div>
         </div>
 
@@ -54,7 +55,7 @@ export function Portfolio() {
                   alt={project.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  data-ai-hint={index === 0 ? "inventory app" : "business dashboard"}
+                  data-ai-hint="project image"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-4 left-4 flex gap-2">

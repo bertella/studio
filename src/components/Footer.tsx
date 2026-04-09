@@ -17,14 +17,14 @@ export function Footer() {
           </div>
 
           <div className="flex gap-8 text-sm text-muted-foreground">
-            <Link href="#services" className="hover:text-accent transition-colors">Services</Link>
-            <Link href="#portfolio" className="hover:text-accent transition-colors">Portfolio</Link>
-            <Link href="#skills" className="hover:text-accent transition-colors">Expertise</Link>
-            <Link href="#contact" className="hover:text-accent transition-colors">Contact</Link>
+            <Link href="#servicios" className="hover:text-accent transition-colors">Servicios</Link>
+            <Link href="#portfolio" className="hover:text-accent transition-colors">Portafolio</Link>
+            <Link href="#skills" className="hover:text-accent transition-colors">Experiencia</Link>
+            <Link href="#contact" className="hover:text-accent transition-colors">Contacto</Link>
           </div>
 
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} DigitalBridge Consulting. All rights reserved.
+            &copy; {new Date().getFullYear()} DigitalBridge Consulting. Córdoba, Argentina.
           </p>
         </div>
       </div>

@@ -6,21 +6,21 @@ import { Badge } from "@/components/ui/badge";
 
 const skillGroups = [
   {
-    name: "Relational Databases",
+    name: "Bases de Datos Relacionales",
     skills: [
       { name: "PostgreSQL", level: 95 },
       { name: "MySQL / MariaDB", level: 90 },
-      { name: "SQL Optimization", level: 92 },
-      { name: "Database Schema Design", level: 98 }
+      { name: "Optimización SQL", level: 92 },
+      { name: "Diseño de Esquemas", level: 98 }
     ]
   },
   {
-    name: "Low-Code Platforms",
+    name: "Plataformas Low-Code",
     skills: [
       { name: "Google AppSheet", level: 98 },
-      { name: "Automation Flows", level: 94 },
-      { name: "API Integrations", level: 88 },
-      { name: "Mobile App Logic", level: 95 }
+      { name: "Flujos de Automatización", level: 94 },
+      { name: "Integración de APIs", level: 88 },
+      { name: "Lógica de Apps Móviles", level: 95 }
     ]
   }
 ];
@@ -31,8 +31,8 @@ export function Skills() {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Technical Expertise</h2>
-            <p className="text-muted-foreground">Deep technical proficiency in full-stack data architecture and low-code rapid deployment.</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Experiencia Técnica</h2>
+            <p className="text-muted-foreground">Competencia técnica profunda en arquitectura de datos y despliegue rápido low-code.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -58,7 +58,7 @@ export function Skills() {
           </div>
 
           <div className="mt-20 pt-12 border-t border-white/5 flex flex-wrap justify-center gap-4">
-            <span className="text-sm font-medium text-muted-foreground mr-2">Also proficient in:</span>
+            <span className="text-sm font-medium text-muted-foreground mr-2">También competente en:</span>
             {["JavaScript", "Node.js", "Firebase", "React", "Google Cloud", "Git", "REST APIs", "NoSQL"].map(skill => (
               <Badge key={skill} variant="secondary" className="px-4 py-1.5 bg-white/5 hover:bg-white/10 text-foreground border-none">
                 {skill}
