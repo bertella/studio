@@ -28,7 +28,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-16 duration-1000">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 text-base font-semibold group">
               <Link href="#contact" className="flex items-center gap-2">
-                Iniciar Colaboración
+                Pedí tu demo gratuita
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
