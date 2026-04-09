@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Box, Calculator, Database, CheckCircle2, Globe } from "lucide-react";
+import { Box, Calculator, Database, CheckCircle2, Globe, MonitorSmartphone } from "lucide-react";
 
 const services = [
   {
@@ -23,6 +23,18 @@ const services = [
     features: ["Indicadores clave (KPIs)", "Análisis de tendencias", "Reportes visuales"]
   },
   {
+    title: "Soporte Técnico Remoto ⚡",
+    description: "Mantenimiento y optimización de sistemas para comercios. Resolución de problemas en tiempo real para que tu negocio nunca pare.",
+    icon: MonitorSmartphone,
+    features: ["Limpieza de Windows", "Configuración de periféricos", "Backups y Antivirus"]
+  },
+  {
+    title: "Estrategia de Ventas Digitales 🚀",
+    description: "Convertimos tu presencia online en una máquina de generar contactos. Optimizamos tu embudo de ventas para que el WhatsApp no pare de sonar.",
+    icon: CheckCircle2, // Podés cambiarlo por otro si preferís
+    features: ["Embudos para WhatsApp", "Captación de Leads", "Optimización de Conversión"]
+  },
+  {
     title: "Desarrollo Web",
     description: "Sitios institucionales y Web Apps modernas (React, Tailwind). Presencia digital profesional enfocada en captar nuevos clientes.",
     icon: Globe,
@@ -41,8 +53,8 @@ export function Services() {
           </p>
         </div>
         
-        {/* Cambiamos a lg:grid-cols-4 para que entren los 4 servicios en una fila en pantallas grandes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Usamos grid-cols-1 en móvil, 2 en tablets y 3 en pantallas grandes para acomodar los 5 servicios */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card key={index} className="glass-effect border-none group hover:shadow-2xl hover:shadow-accent/5 transition-all duration-300">
               <CardHeader>
