@@ -1,27 +1,32 @@
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Box, Calculator, Database, CheckCircle2 } from "lucide-react";
+import { Box, Calculator, Database, CheckCircle2, Globe } from "lucide-react";
 
 const services = [
   {
-    title: "Sistemas de Inventario",
-    description: "Soluciones de seguimiento en tiempo real que eliminan los problemas de falta o exceso de stock para comercios y minoristas.",
+    title: "Apps a medida (AppSheet)",
+    description: "Digitalización total para sacar a los negocios del papel. Gestioná stock y ventas desde el celular, directamente en el mostrador.",
     icon: Box,
-    features: ["Escaneo de códigos de barras", "Sincronización en la nube", "Reordenamiento automático"]
+    features: ["Uso sin conexión", "Escaneo de códigos", "Acceso multiusuario"]
   },
   {
-    title: "Presupuestos Automatizados",
-    description: "Herramientas de contabilidad digital que reemplazan planillas desordenadas con informes automáticos y claridad financiera.",
+    title: "Automatización (AppScript)",
+    description: "Hacé que los presupuestos y avisos se generen solos. Vinculamos tus planillas para que la información fluya sin errores humanos.",
     icon: Calculator,
-    features: ["Seguimiento de gastos", "Proyecciones", "Informes personalizados"]
+    features: ["PDFs automáticos", "Envío de emails", "Sincronización de datos"]
   },
   {
-    title: "Optimización SQL",
-    description: "Ajuste profundo de bases de datos para asegurar que la información de tu negocio sea rápida, confiable y organizada.",
+    title: "Tableros de Control",
+    description: "Visualización profesional en Tableau o Power BI. Dejá de adivinar y empezá a ver tu ganancia real y el estado de tu stock hoy.",
     icon: Database,
-    features: ["Rendimiento de consultas", "Diseño de esquemas", "Migración de datos"]
+    features: ["Indicadores clave (KPIs)", "Análisis de tendencias", "Reportes visuales"]
+  },
+  {
+    title: "Desarrollo Web",
+    description: "Sitios institucionales y Web Apps modernas (React, Tailwind). Presencia digital profesional enfocada en captar nuevos clientes.",
+    icon: Globe,
+    features: ["Diseño Mobile-First", "Optimización SEO", "Alta Velocidad"]
   }
 ];
 
@@ -32,18 +37,19 @@ export function Services() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Servicios Especializados</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Enfoque en las herramientas que más importan para las operaciones digitales modernas.
+            Soluciones tecnológicas diseñadas para digitalizar tu empresa y maximizar la rentabilidad.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cambiamos a lg:grid-cols-4 para que entren los 4 servicios en una fila en pantallas grandes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <Card key={index} className="glass-effect border-none group hover:shadow-2xl hover:shadow-accent/5 transition-all duration-300">
               <CardHeader>
                 <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
                   <service.icon className="w-6 h-6" />
                 </div>
-                <CardTitle className="text-2xl">{service.title}</CardTitle>
+                <CardTitle className="text-xl md:text-2xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-6 leading-relaxed">

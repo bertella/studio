@@ -1,11 +1,9 @@
-
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
-import { Services } from "@/components/sections/Services";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Skills } from "@/components/sections/Skills";
-import { AITool } from "@/components/sections/AITool";
+import { Services } from "@/components/sections/Services"; // Usamos el archivo Services.tsx que tenés en la carpeta sections
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -15,10 +13,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
+      <Services /> 
       <Portfolio />
       <Skills />
-      <AITool />
       <Contact />
       <Footer />
     </main>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -8,26 +7,30 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const projects = [
   {
-    title: "App de Inventario para Ferretería",
+    title: "Gestión de Stock: Bulonera Córdoba",
     category: "AppSheet / Low-Code",
-    description: "Una solución móvil completa para una ferretería local, con conteo de stock en tiempo real e integraciones con proveedores.",
-    image: PlaceHolderImages.find(img => img.id === 'inventory-app')?.imageUrl,
-    tags: ["Código de Barras", "Nube", "Mobile"]
+    description: "Sistema móvil a medida que eliminó el uso de planillas de papel. Permite el control de inventario en tiempo real, escaneo de productos y actualización automática de precios.",
+    image: "/assets/imagen.png",
+    tags: ["AppSheet", "Google Workspace", "Automatización"],
+    link: "https://www.appsheet.com/start/df6d5a3d-1dc0-48d5-9699-fc5b99a054bb"
   },
-  {
-    title: "Tablero Financiero para PyMEs",
-    category: "SQL / Business Intelligence",
-    description: "Herramienta de presupuestos centralizada para una constructora que automatizó su proceso de conciliación mensual.",
-    image: PlaceHolderImages.find(img => img.id === 'budgeting-tool')?.imageUrl,
-    tags: ["PostgreSQL", "Automatización", "Finanzas"]
-  },
-  {
-    title: "Optimización de Pipelines de Datos",
-    category: "Optimización SQL",
-    description: "Reestructuración de base de datos para un e-commerce, reduciendo tiempos de consulta de 5s a menos de 100ms.",
-    image: PlaceHolderImages.find(img => img.id === 'sql-optimization')?.imageUrl,
-    tags: ["Indexación", "Tuning", "Migración"]
-  }
+  
+    {
+      title: "Análisis de Ventas y Rentabilidad",
+      category: "Business Intelligence / Tableau",
+      description: "Tablero interactivo que centraliza datos de ventas para identificar productos estrella y márgenes de ganancia real en tiempo real.",
+      image: "/assets/data.png", // Asegurate de subir una captura del tablero con este nombre
+      tags: ["Tableau", "Análisis de Datos", "Estrategia"],
+      link: "https://public.tableau.com/shared/5RZ8PDWCK?:display_count=n&:origin=viz_share_link" // Pegá acá el link de tu perfil o del tablero específico
+    },
+    {
+      title: "Ferreteria: Cotizador Inteligente",
+      category: "Web App / JavaScript / Cloud / SQL",
+      description: "Aplicación Mobile-First que permite generar presupuestos en PDF con control de márgenes y sincronización en tiempo real con Google Sheets.",
+      image: "/assets/imagen copy.png", // Sugerencia: Captura de la vista de presupuesto en el celu
+      tags: ["Tailwind CSS", "Apps Script", "PDF Engine"],
+      link: " https://bertella.github.io/presupuesto/" // Asumiendo que ya lo tenés en GitHub Pages
+    },
 ];
 
 export function Portfolio() {
@@ -48,19 +51,24 @@ export function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="group cursor-pointer">
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-muted">
+            <a 
+              key={index} 
+              href={project.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group block cursor-pointer space-y-4"
+            >
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-muted">
                 <Image 
                   src={project.image || 'https://picsum.photos/seed/placeholder/800/600'} 
                   alt={project.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  data-ai-hint="project image"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-4 left-4 flex gap-2">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-black/50 backdrop-blur-md px-2 py-1 rounded border border-white/10">
+                    <span key={tag} className="text-[10px] font-bold uppercase tracking-wider bg-black/50 backdrop-blur-md px-2 py-1 rounded border border-white/10 text-white">
                       {tag}
                     </span>
                   ))}
@@ -79,10 +87,10 @@ export function Portfolio() {
                   {project.description}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
