@@ -4,7 +4,7 @@ import { Terminal, MessageSquareMore } from "lucide-react"; // Cambiamos el icon
 import Link from "next/link";
 
 export function Footer() {
-  const phoneNumber = "549351XXXXXXX"; // Acordate de poner tu número real
+  const phoneNumber = "5493512042270"; // Acordate de poner tu número real
   const message = "¡Hola! Vi tu web DoctaData y me gustaría consultarte por un proyecto.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
