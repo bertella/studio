@@ -1,9 +1,10 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
+// 1. Importamos la función de eventos
+import { sendGAEvent } from '@next/third-parties/google';
 
 export function Hero() {
   return (
@@ -26,13 +27,27 @@ export function Hero() {
             Ayudo a comercios y pequeñas empresas a dejar el desorden de los Excel mediante aplicaciones personalizadas y automatización. Menos caos, más ventas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-16 duration-1000">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 text-base font-semibold group">
+            {/* Botón de Demo con evento */}
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 text-base font-semibold group"
+              onClick={() => sendGAEvent('event', 'click_demo', { location: 'hero_main' })}
+            >
               <Link href="#contact" className="flex items-center gap-2">
                 Pedí tu demo gratuita
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white/10 hover:bg-white/5 px-8 text-base font-semibold">
+
+            {/* Botón de Portafolio con evento */}
+            <Button 
+              asChild 
+              size="lg" 
+              variant="outline" 
+              className="border-white/10 hover:bg-white/5 px-8 text-base font-semibold"
+              onClick={() => sendGAEvent('event', 'view_portfolio', { location: 'hero_secondary' })}
+            >
               <Link href="#portfolio">Ver Portafolio</Link>
             </Button>
           </div>
