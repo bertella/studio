@@ -1,6 +1,7 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'DoctaData | Soluciones de Software y Experto en Low-Code',
@@ -22,7 +23,11 @@ export default function RootLayout({
       <body className="font-body antialiased bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
         {children}
         <Toaster />
+        {/* Google Analytics va aquí, justo antes de cerrar el body */}
+        <GoogleAnalytics gaId="G-T5J02SH72E" />
       </body>
     </html>
   );
 }
+
+
