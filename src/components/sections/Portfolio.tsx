@@ -19,18 +19,26 @@ const projects = [
       title: "Análisis de Ventas y Rentabilidad",
       category: "Business Intelligence / Tableau",
       description: "Tablero interactivo que centraliza datos de ventas para identificar productos estrella y márgenes de ganancia real en tiempo real.",
-      image: "/assets/data.png", // Asegurate de subir una captura del tablero con este nombre
+      image: "/assets/data.png", 
       tags: ["Tableau", "Análisis de Datos", "Estrategia"],
-      link: "https://public.tableau.com/shared/5RZ8PDWCK?:display_count=n&:origin=viz_share_link" // Pegá acá el link de tu perfil o del tablero específico
+      link: "https://public.tableau.com/shared/5RZ8PDWCK?:display_count=n&:origin=viz_share_link" 
     },
     {
       title: "Ferreteria: Cotizador Inteligente",
       category: "Web App / JavaScript / Cloud / SQL",
       description: "Aplicación Mobile-First que permite generar presupuestos en PDF con control de márgenes y sincronización en tiempo real con Google Sheets.",
-      image: "/assets/imagen copy.png", // Sugerencia: Captura de la vista de presupuesto en el celu
+      image: "/assets/imagen copy.png", 
       tags: ["Tailwind CSS", "Apps Script", "PDF Engine"],
-      link: " https://bertella.github.io/presupuesto/" // Asumiendo que ya lo tenés en GitHub Pages
+      link: " https://bertella.github.io/presupuesto/" 
     },
+    {
+      title: "Veterinaria Vetlife",
+      category: "Web App / Next.js",
+      description: "Landing page para una clínica veterinaria, con un diseño moderno y un formulario de contacto. El sitio es completamente responsivo y está optimizado para SEO.",
+      image: "/assets/vet-life.png",
+      tags: ["Next.js", "Tailwind CSS", "Vercel"],
+      link: "https://vetlife-bermell-bertellas-projects.vercel.app/"
+    }
 ];
 
 export function Portfolio() {

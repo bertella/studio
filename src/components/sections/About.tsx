@@ -11,7 +11,7 @@ export function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-square rounded-2xl overflow-hidden glass-effect border-accent/10">
               <img 
-                src="/assets/fp.jpg" 
+                src="/assets/perfil.jpg" 
                 alt="Consultor de Software" 
                 className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
               />
