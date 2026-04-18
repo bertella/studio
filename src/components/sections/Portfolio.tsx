@@ -37,7 +37,7 @@ const projects = [
       description: "Landing page para una clínica veterinaria, con un diseño moderno y un formulario de contacto. El sitio es completamente responsivo y está optimizado para SEO.",
       image: "/assets/vet-life.png",
       tags: ["Next.js", "Tailwind CSS", "Vercel"],
-      link: "https://vetlife-bermell-bertellas-projects.vercel.app/"
+      link: "https://https-github-com-bertella-vetlife.vercel.app/"
     }
 ];
 
