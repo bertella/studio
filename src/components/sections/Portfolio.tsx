@@ -3,11 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Layers, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Layers, CheckCircle2, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 
@@ -134,54 +133,80 @@ export function Portfolio() {
       </div>
 
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-3xl bg-black/90 backdrop-blur-xl border-white/10 p-0 overflow-hidden text-white">
+        {/* Cambios: max-h-[90vh] y overflow-hidden en el contenedor principal */}
+        <DialogContent className="max-w-3xl bg-black/95 backdrop-blur-xl border-white/10 p-0 overflow-hidden text-white max-h-[90vh] flex flex-col">
           {selectedProject && (
-            <div className="flex flex-col">
-              <div className="relative aspect-video w-full">
-                <Image 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title} 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-8 space-y-6">
-                <div>
-                  <div className="text-accent text-xs font-bold tracking-widest uppercase mb-2">{selectedProject.category}</div>
-                  <DialogTitle className="text-3xl font-bold">{selectedProject.title}</DialogTitle>
+            <>
+              {/* Contenedor scrolleable interno */}
+              <div className="overflow-y-auto flex-1 custom-scrollbar">
+                <div className="relative aspect-video w-full">
+                  <Image 
+                    src={selectedProject.image} 
+                    alt={selectedProject.title} 
+                    fill 
+                    className="object-cover"
+                  />
+                  {/* Botón X manual para mobile (opcional, shadcn ya trae una pero esta es más visible) */}
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="absolute top-4 right-4 p-2 bg-black/50 backdrop-blur-md rounded-full border border-white/10 md:hidden"
+                  >
+                    <X className="w-5 h-5 text-white" />
+                  </button>
                 </div>
                 
-                <div className="space-y-4">
-                  <p className="text-gray-300 leading-relaxed text-lg italic">
-                    "{selectedProject.longDescription}"
-                  </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-                    <div className="space-y-3">
-                      <h4 className="font-bold text-sm uppercase tracking-wider text-white/50">Impacto y Resultados</h4>
-                      <ul className="space-y-2">
-                        {selectedProject.impact.map((item: string, i: number) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-gray-200">
-                            <CheckCircle2 className="w-4 h-4 text-accent" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+                <div className="p-6 md:p-10 space-y-8">
+                  <div>
+                    <div className="text-accent text-xs font-bold tracking-widest uppercase mb-2">
+                      {selectedProject.category}
                     </div>
-                    <div className="flex flex-col justify-end">
-                      <a 
-                        href={selectedProject.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="w-full py-3 bg-accent text-black text-center rounded-xl font-bold hover:brightness-110 transition-all flex items-center justify-center gap-2"
-                      >
-                        Visitar Proyecto <ExternalLink className="w-4 h-4" />
-                      </a>
+                    <DialogTitle className="text-3xl md:text-4xl font-bold leading-tight">
+                      {selectedProject.title}
+                    </DialogTitle>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <p className="text-gray-300 leading-relaxed text-lg italic border-l-4 border-accent pl-4">
+                      "{selectedProject.longDescription}"
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                      <div className="space-y-4">
+                        <h4 className="font-bold text-sm uppercase tracking-wider text-white/50">Impacto y Resultados</h4>
+                        <ul className="space-y-3">
+                          {selectedProject.impact.map((item: string, i: number) => (
+                            <li key={i} className="flex items-start gap-3 text-sm text-gray-200">
+                              <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex flex-col gap-3 justify-end">
+                        {/* Botón de Acción Principal */}
+                        <a 
+                          href={selectedProject.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="w-full py-4 bg-accent text-black text-center rounded-xl font-bold hover:brightness-110 hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+                        >
+                          Visitar Proyecto <ExternalLink className="w-4 h-4" />
+                        </a>
+                        
+                        {/* Botón "Volver" sugerido */}
+                        <button 
+                          onClick={() => setSelectedProject(null)}
+                          className="w-full py-3 bg-white/5 text-white/80 text-center rounded-xl font-medium hover:bg-white/10 transition-all border border-white/5"
+                        >
+                          Volver a proyectos
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </>
           )}
         </DialogContent>
       </Dialog>
