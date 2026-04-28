@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-// Importamos el componente de GTM en lugar del de Analytics
 import { GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
@@ -17,13 +16,18 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark scroll-smooth">
       <head>
+        {/* Las fuentes las dejamos, pero el GTM lo movemos abajo para cumplir con el estándar de Next.js */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-        {/* Google Tag Manager en el Head (Mejor práctica para trackeo) */}
-        <GoogleTagManager gtmId="GTM-PB257DS7" />
       </head>
       <body className="font-body antialiased bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
+        {/* El componente GoogleTagManager se coloca aquí, fuera del head. 
+          Next.js lo inyectará automáticamente en el lugar correcto (head o body) 
+          según la estrategia de carga optimizada.
+        */}
+        <GoogleTagManager gtmId="GTM-PB257DS7" />
+        
         {children}
         <Toaster />
       </body>
